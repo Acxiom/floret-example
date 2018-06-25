@@ -1,0 +1,30 @@
+{
+  "name": "chat-channel",
+  "uri": "/chat-channel",
+  "port": "8079",
+  "apis": [
+    {
+      "name": "channel",
+      "uri": "/channel",
+      "methods": [
+        "GET",
+        "POST",
+        "DELETE"
+      ],
+      "path": "/api/channel"
+    }
+  ],
+  "channels": [
+    {
+      "name": "channel-activity",
+      "uri": "/channel-activity",
+      "description": "a room was created or deleted"
+    },
+    {
+      "name": "member-activity",
+      "uri": "/member-activity",
+      "description": "a member joined or left the group"
+    }
+  ],
+  "subscriptions": []
+}
