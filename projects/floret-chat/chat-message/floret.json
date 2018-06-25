@@ -1,0 +1,32 @@
+{
+  "name": "chat-message",
+  "uri": "/chat-message",
+  "port": "8078",
+  "apis": [
+    {
+      "name": "message",
+      "uri": "/message",
+      "methods": [
+        "GET",
+        "POST",
+        "DELETE"
+      ],
+      "path": "/api/message"
+    }
+  ],
+  "channels": [
+    {
+      "name": "message-activity",
+      "uri": "/message-activity",
+      "description": "A new message was published or retracted"
+    }
+  ],
+  "subscriptions": [
+    {
+      "name": "message-api",
+      "service": "chat-channel",
+      "channel": "channel-activity",
+      "path": "/subs/channel-sub"
+    }
+  ]
+}
