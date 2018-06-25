@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+
+        <title>Floret Chat</title>
+
+        <link rel="stylesheet" href="public/css/styles.css">
+
+        <script
+                src="https://code.jquery.com/jquery-3.3.1.min.js"
+                integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+                crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+                integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+                crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.1.0/socket.io.js"></script>
+
+        <script src="public/js/utils/utils.js"></script>
+        <script src="public/js/init.js"></script>
+
+        <script src="public/js/templates/channels.js"></script>
+        <script src="public/js/templates/messages.js"></script>
+        <script src="public/js/templates/users.js"></script>
+        <script src="public/js/templates/sign-in.js"></script>
+
+        <script src="public/js/controllers/home.js"></script>
+
+        <script src="public/js/views/home.js"></script>
+    </head>
+    <body>
+        <div class="chat-container">
+
+            <header class="page-header">
+                <div class="flex-item" id="floretLogo">
+                    <a href="https://github.com/Acxiom/floret">
+                        <img id="floretLogoImage" src="public/images/floret-logo.png">
+                    </a>
+                </div>
+                <div class="flex-item page-title"><h1>Floret Chat</h1></div>
+                <div class="flex-item login" id="signIn"></div>
+            </header>
+
+            <main class="page-content">
+                <nav class="content-navigation" id="channels">
+
+                </nav>
+                <article class="content-messages" id="messages">
+
+                </article>
+                <aside class="content-sidebar" id="users">
+
+                </aside>
+            </main>
+
+            <footer class="page-footer">
+
+            </footer>
+
+        </div>
+    </body>
+</html>

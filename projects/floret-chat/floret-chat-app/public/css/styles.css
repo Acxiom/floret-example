@@ -1,0 +1,174 @@
+html,
+body {
+    padding: 0;
+    margin: 0;
+    font-family: arial, sans-serif;
+    text-align: center;
+}
+
+body {
+    box-sizing: border-box;
+    color: white;
+    font-size: 80%;
+    padding: 1em;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+
+}
+
+.flex-item {
+    flex: 1;
+}
+
+.flex-item .login {
+    padding-top: .5em;
+}
+
+.chat-container {
+    height: 80vh;
+}
+
+.page-title {
+    flex-grow: 2;
+    white-space: nowrap;
+}
+
+main {
+    background-color: pink;
+    display: flex;
+    height: 100%;
+
+}
+
+header {
+    background-color: #006699;
+    color: white;
+    display: flex;
+}
+
+nav {
+    background-color: white;
+    color: #006699;
+    flex: 1;
+    padding: .25em;
+}
+
+nav .flex-item {
+    height: 2em;
+    border-bottom-style: solid;
+    border-bottom-color: gray;
+    border-bottom-width: thin;
+    cursor: pointer;
+}
+
+aside {
+    background-color: white;
+    color: #006699;
+    flex: 1;
+    align-items: flex-start;
+    justify-content: flex-end;
+    padding: .25em;
+}
+
+.user-list {
+    flex: 1;
+    justify-content: flex-end;
+}
+
+
+aside .flex-item.user {
+
+    border-style: solid;
+    border-color: gray;
+    border-width: thin;
+    justify-content: flex-start;
+    flex-flow:row-reverse
+}
+
+article {
+    background-color: gray;
+    color: white;
+    flex: 2 2 12em;
+    justify-content: flex-end;
+    padding-bottom: 1em;
+}
+
+.content-messages {
+    display: flex;
+    flex-direction: column;
+
+}
+
+#signInBox {
+    width: 5em;
+    padding-top: 2px;
+}
+
+#floretLogo {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-left: .5em;
+    text-align: left;
+}
+
+#floretLogoImage {
+    height: 5vh;
+    width: 5vh;
+}
+
+.content-messages.flex-item {
+
+}
+
+.flex-item.message-block {
+    overflow-y: scroll;
+    text-align: left;
+    height: 100%;
+    padding: 1em;
+}
+
+.input {
+    width: 100%;
+}
+
+footer {
+    background-color: white;
+    color: white;
+    border-top-style: solid;
+    border-top-color: #006699;
+    border-top-width: thin;
+}
+
+.active {
+    display: none;
+}
+
+.inactive {
+    display: inline;
+}
+
+.channel {
+    text-align: left;
+    padding-left: 1em;
+}
+
+.channel-input {
+    border-bottom-style: solid;
+    border-bottom-color: gray;
+    border-bottom-width: thin;
+
+}
+
+.channel-input-control {
+    text-align: left;
+    padding-left: .5em;
+    border-style: none;
+    width: 100%;
+}
+
+.selected-channel {
+    background-color: #006699;
+    color: white;
+}
