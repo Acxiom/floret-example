@@ -1,0 +1,25 @@
+{
+  "name": "chat-user",
+  "uri": "/chat-user",
+  "port": "8081",
+  "apis": [
+    {
+      "name": "user",
+      "uri": "/user",
+      "methods": [
+        "GET",
+        "POST",
+        "DELETE"
+      ],
+      "path": "/api/user"
+    }
+  ],
+  "channels": [
+    {
+      "name": "user-activity",
+      "uri": "/user-activity",
+      "description": "a user was added or removed"
+    }
+  ],
+  "subscriptions": []
+}
