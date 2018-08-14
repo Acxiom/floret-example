@@ -1,8 +1,6 @@
 ## Hello Galaxy (floret microservices)
 Say hello to the galaxy and receive greetings collected from planets in the galaxy.
 
-Follow the steps to create 3 microservices.
-
 ### Planets (Floret Microservices)
 #### earth 
 ````sh
@@ -285,6 +283,7 @@ module.exports = (app) => {
 ````
 
 ### Start services
+Start each service (galaxy, earth, mars)
 ```
 // start each service with...
 node index

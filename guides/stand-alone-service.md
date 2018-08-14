@@ -57,22 +57,7 @@ module.exports = (app) => {
 }
 ```
 #### package.json
-```json
-{
-  "name": "greetings",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "author": "",
-  "license": "ISC",
-  "dependencies": {
-    "floret": "^1.0.0"
-  }
-}
-```
+No change
 
 ### Start service
 ```
@@ -87,7 +72,7 @@ Listening on port 8088
 ### Request 
 
 ```
-curl -i -H "Accept: application/json" -H "Content-Type: application/json" -X GET http://127.0.0.1:8000/hello/world
+curl -i -H "Accept: application/json" -H "Content-Type: application/json" -X GET http://127.0.0.1:8088/hello/world
 ```
 
 ```
