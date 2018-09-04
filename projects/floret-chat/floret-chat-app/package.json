@@ -8,10 +8,10 @@
     "start": "node server.js"
   },
   "dependencies": {
-    "floret": "^1.0.0",
+    "floret": "^1.1.2",
     "socket.io": "^2.0.4",
     "socket.io-client": "^2.0.4"
   },
-  "author": "",
+  "author": "Clint Brown",
   "license": "ISC"
 }

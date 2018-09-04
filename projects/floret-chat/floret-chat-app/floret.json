@@ -1,7 +1,7 @@
 {
   "name": "floret-chat",
   "uri": "/floret-chat",
-  "port": "8080",
+  "port": 8080,
   "apis": [
 
   ],
