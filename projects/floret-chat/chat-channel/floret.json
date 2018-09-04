@@ -1,7 +1,8 @@
 {
   "name": "chat-channel",
   "uri": "/chat-channel",
-  "port": "8079",
+  "port": 8079,
+  "gatewayModuleName": "floret-gateway-kong",
   "apis": [
     {
       "name": "channel",

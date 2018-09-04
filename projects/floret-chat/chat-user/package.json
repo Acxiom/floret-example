@@ -10,6 +10,6 @@
   "author": "Clint Brown",
   "license": "Apache-2.0",
   "dependencies": {
-    "floret": "^1.0.0"
+    "floret": "^1.1.2"
   }
 }

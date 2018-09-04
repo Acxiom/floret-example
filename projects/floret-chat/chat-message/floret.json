@@ -1,7 +1,7 @@
 {
   "name": "chat-message",
   "uri": "/chat-message",
-  "port": "8078",
+  "port": 8078,
   "apis": [
     {
       "name": "message",
