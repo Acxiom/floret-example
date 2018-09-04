@@ -10,7 +10,7 @@ touch api/hello.js &&
 touch index.js &&
 touch floret.json &&
 npm init --silent --yes && 
-npm install --save floret
+npm i -s floret 
 ````
 
 #### index.js
@@ -72,7 +72,7 @@ Listening on port 8088
 ### Request 
 
 ```
-curl -i -H "Accept: application/json" -H "Content-Type: application/json" -X GET http://127.0.0.1:8088/hello/world
+curl -i -H "Accept: application/json" -H "Content-Type: application/json" -X GET http://127.0.0.1:8088/greetings/hello/world
 ```
 
 ```

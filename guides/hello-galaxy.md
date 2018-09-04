@@ -2,6 +2,9 @@
 Say hello to the galaxy and receive greetings collected from planets in the galaxy.
 
 ### Planets (Floret Microservices)
+Create a high-level project directory to hold your microservice code, and
+then run these commands at the project root to create subprojects.
+ 
 #### earth 
 ````sh
 mkdir earth &&
@@ -11,7 +14,8 @@ touch api/greet.js &&
 touch index.js &&
 touch floret.json &&
 npm init --silent --yes && 
-npm install --save floret
+npm i -s floret &&
+npm i -s floret-gateway-kong
 ````
 ##### project structure
 ````
@@ -32,6 +36,7 @@ earth/
     "name": "earth",
     "uri": "/earth",
     "port": 8887,
+    "gatewayModuleName": "floret-gateway-kong",
     "apis": [
         {
           "name": "greet-api",
@@ -75,7 +80,7 @@ module.exports = (app) => {
 
 #### mars 
 
-````sh
+```
 mkdir mars &&
 cd mars &&
 mkdir api &&
@@ -83,7 +88,8 @@ touch api/greet.js &&
 touch index.js &&
 touch floret.json &&
 npm init --silent --yes && 
-npm install --save floret
+npm i -s floret &&
+npm i -s floret-gateway-kong
 
 ````
 
@@ -100,11 +106,12 @@ mars/
 ##### file contents (copy/paste content into local files)
 
 ##### floret.json
-````
+```json
 {
   "name": "mars",
   "uri": "/mars",
   "port": 8886,
+  "gatewayModuleName": "floret-gateway-kong",
   "apis": [
     {
       "name": "greet-api",
@@ -126,7 +133,7 @@ mars/
 }
 ````
 #### index.js
-````
+```js
 {
     const Floret = require('floret');
     const app = new Floret();
@@ -136,7 +143,7 @@ mars/
 }
 ````
 #### api/greet.js
-````
+```js
 module.exports = (app) => {
     app.router.post('/greet/:name', async (ctx, next) => {
         app.channels['mars-greeting'].broadcast({
@@ -149,12 +156,14 @@ module.exports = (app) => {
 ````sh
 mkdir galaxy &&
 cd galaxy &&
-mkdir api &&
-touch api/greet.js &&
+mkdir api subs &&
+touch api/hello.js &&
+touch subs/common.js &&
 touch index.js &&
 touch floret.json &&
 npm init --silent --yes && 
-npm install --save floret
+npm i -s floret &&
+npm i -s floret-gateway-kong
 
 ````
 ##### Project Structure
@@ -173,11 +182,12 @@ galaxy/
 ##### file contents (copy/paste content into local files)
 
 #### floret.json
-````
+```json
 {
     "name": "galaxy",
     "uri": "/galaxy",
     "port": 8888,
+    "gatewayModuleName": "floret-gateway-kong",
     "disconnected": false,
     "apis": [
         {
@@ -209,7 +219,7 @@ galaxy/
 
 ````
 #### index.js
-````
+```js
 {
     const Floret = require('floret');
     const app = new Floret();
@@ -226,7 +236,7 @@ galaxy/
 
 ````
 #### subs/common.js
-````
+```js
 module.exports = (app) => {
     return {
         // attach the default handler to the subscription
@@ -235,9 +245,9 @@ module.exports = (app) => {
 };
 ````
 #### api/hello.js
-````
+```js
 module.exports = (app) => {
-    app.router.get('/hello-galaxy/:name', async (ctx, next) => {
+    app.router.get('/hello/:name', async (ctx, next) => {
         let name = ctx.params.name;
         let greetings = [];
 
@@ -283,9 +293,17 @@ module.exports = (app) => {
 ````
 
 ### Start services
-Start each service (galaxy, earth, mars)
+Start each service (earth, mars, galaxy)
 ```
-// start each service with...
+// start each service in separate sessions
+# from project root 
+cd earth 
+node index
+
+cd mars 
+node index
+
+cd galaxy 
 node index
 ```
 
