@@ -1,0 +1,25 @@
+{
+  "name": "mention",
+  "uri": "/mention",
+  "port": 8884,
+  "gatewayModuleName": "floret-gateway-kong",
+  "apis": [
+
+  ],
+  "channels": [
+    {
+      "name": "mentions",
+      "uri": "/mentions",
+      "description": "a channel to broadcasts mentions"
+    }
+  ],
+  "subscriptions": [
+    {
+      "name": "message-activity-sub",
+      "service": "chat-message",
+      "channel": "message-activity",
+      "path": "/subs/message-sub"
+    }
+
+  ]
+}

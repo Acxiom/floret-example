@@ -26,6 +26,12 @@
       "service": "chat-user",
       "channel": "user-activity",
       "path": "/subs/user-sub"
+    },
+    {
+      "name": "mention-api",
+      "service": "mention",
+      "channel": "mentions",
+      "path": "/subs/mention-sub"
     }
   ]
 }
